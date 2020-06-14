@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
+import {useNavigation} from '@react-navigation/native';
+
 
 export default function Home(){
+const navigation = useNavigation();
+
+function navigateToAnimals(){
+    navigation.navigate('Animals')
+}
+
+
+
+
     return (
 <View style={styles.container}>
  <View style={styles.header}>
@@ -17,9 +28,12 @@ export default function Home(){
 
 <View style={styles.opcoes1}>
 
-<TouchableOpacity style={styles.opcao} onPress={() => {}}>
+<TouchableOpacity style={styles.opcao} 
+onPress={navigateToAnimals}>
 <Text style={styles.opcaoTexto}>Animais</Text>
 </TouchableOpacity>
+
+
 <TouchableOpacity style={styles.opcao} onPress={() => {}}>
 <Text style={styles.opcaoTexto}>Nascimentos</Text>
 </TouchableOpacity>
