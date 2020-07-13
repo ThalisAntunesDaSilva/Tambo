@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.6",
+    "@react-navigation/drawer": "^5.8.5",
     "@react-navigation/native": "^5.3.0",
     "@react-navigation/stack": "^5.3.2",
     "axios": "^0.19.2",

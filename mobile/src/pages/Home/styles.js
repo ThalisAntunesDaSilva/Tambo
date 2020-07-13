@@ -3,67 +3,58 @@ import Constants from 'expo-constants';
 
 
 export default StyleSheet.create({
-container: {
-flex: 1,
-paddingHorizontal: 24,
-paddingTop: Constants.statusBarHeight + 20,
-},
+
+container:{
+    paddingTop: Constants.statusBarHeight,
+    margin: 0},
 
 header: {
+    height: 250,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'},
+
+imgHeader :{
+    height: 230},
+
+   
+options : {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+    marginTop: 30},
+     
+buttonOption: {
+    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    backgroundColor: '#fff',
+    elevation: 2, // Android
+    height: 50,
+    width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent :  'space-between',
-    alignItems: 'center'
-},
-    headerText : {
-        fontSize: 15,
-        color: '#727286'
-    },
+    height: 150,
+    width: 150,
+    borderRadius: 10,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column'},
 
-    headerTextBold: {
-        fontWeight: 'bold'
-    },
+iconOption : {
+    height: 60,
+    width: 60},
 
-    description: {
-        fontSize: 16,
-        lineHeight: 24,
-        color: '#737380',
-        marginLeft: 50,
-        fontWeight: 'bold'
-    },
 
- opcoes1:{
-     marginTop: 5,
-     borderRadius: 8,
-     flexDirection: 'row',
+
+
+
+
     
-},
-opcoes2:{
-    marginTop: 25,
-    borderRadius: 8,
-    flexDirection: 'row'
-},
-opcoes3:{
-    marginTop: 25,
-    borderRadius: 8,
-    flexDirection: 'row',
-    
-    
-},
-    opcao: {
-      marginRight: 10,
-        backgroundColor: '#000000',
-       borderRadius: 8,
-        height: 160,
-        width: '50%',
-        justifyContent: 'center',
-        alignItems: 'center'
-},
-
-opcaoTexto:{
-    color: '#FFF',
-    fontSize: 20,
-    fontWeight: 'bold'
-}
 });
 
 

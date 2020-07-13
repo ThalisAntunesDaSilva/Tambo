@@ -3,62 +3,130 @@ import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container: {
-        flex: 1,
-        paddingHorizontal: 24,
-        paddingTop: Constants.statusBarHeight + 20,
+        paddingTop: Constants.statusBarHeight,
+        margin: 0
     },
 
     header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
+      height: 60,
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexDirection: 'row',
+      paddingLeft: 20,
+      paddingRight: 20,
+      paddingTop: 10
+
+
     },
 
-    headerText: {
+    buttonAdd: {
+        shadowColor: 'rgba(0,0,0, .4)', // IOS
+        shadowOffset: { height: 1, width: 1 }, // IOS
+        shadowOpacity: 1, // IOS
+        shadowRadius: 1, //IOS
+        backgroundColor: '#fff',
+        elevation: 2, // Android
+        height: 40,
+        width: 90,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        borderRadius: 40 },
+
+    
+        headerText: {
         fontSize: 15,
         color: '#737380'
     },
-    textButton:{
-        color: '#000000'
-    },
 
-    Button : {
+    searchBox:{ 
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    
+    inputSearch:{
+        shadowColor: 'rgba(0,0,0, .4)', // IOS
+        shadowOffset: { height: 1, width: 1 }, // IOS
+        shadowOpacity: 1, // IOS
+        shadowRadius: 1, //IOS
+        backgroundColor: '#fff',
+        elevation: 2, // Android
+        height: 40,
+        width: 280,
+        paddingLeft: 20,
+        display: 'flex',
+        alignItems: 'center',
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'baseline'
-    },
+        borderRadius: 40,
+},
 
-    headerTextBold: {
-        fontWeight: 'bold',
-    },
 
-  
-    animalsList: {
-        marginTop: 32,
-     },
+filterList:{
+display: 'flex',
+justifyContent: 'space-around',
+alignItems: 'center',
+flexDirection: 'row',
+height: 60
+},
 
-    vaca: {
-        padding: 24,
-        borderRadius: 8,
-        backgroundColor: '#FFF',
-        marginBottom: 16,
+filterbutton: {
+    shadowColor: 'rgba(0,0,0, .4)', // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    elevation: 2, // An
+    backgroundColor: '#000000',
+    height: 30,
+    width: 80,
+    borderRadius: 8,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: -4},
+
+filterTextButton: {
+    color: '#ffffff'
+},
+
+animalBox: {
+marginLeft: 20,
+marginRight: 20,
+height: 130,
+shadowColor: 'rgba(0,0,0, .4)', // IOS
+shadowOffset: { height: 1, width: 1 }, // IOS
+shadowOpacity: 1, // IOS
+shadowRadius: 1, //IOS
+backgroundColor: '#fff',
+elevation: 2, // Android
+marginBottom: 20,
+display: 'flex',
+alignItems: 'center',
+justifyContent: 'space-around',
+flexDirection: 'row',
+},
+
+animalDetails: {
+display: 'flex',
+flexDirection: 'row',
+justifyContent: 'center'
+},
+
+vacaProperty : {
+fontWeight: 'bold'
+},
+
+   
+
+    animalImg :{
         height: 90,
-        justifyContent: 'space-between',
-        alignItems: 'baseline'
-       , flexDirection: 'row' 
+        width: 60,
+        borderRadius: 5
     },
 
-    vacaProperty: {
-        fontSize: 14,
-        color: '#41414d',
-        fontWeight: 'bold',
-    },
-
-    vacaValue: {
-        marginTop: 8,
-        fontSize: 15,
-        marginBottom: 24,
-        color: '#737380',
+    deleteButton:{
+        marginTop: -50
     }
     
 });
