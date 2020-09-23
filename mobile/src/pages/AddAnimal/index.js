@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
-import { View, Image, Text, TouchableOpacity, TextInput  } from 'react-native';
+import React, {useState } from 'react';
+import { View, Image, Text, TouchableOpacity, TextInput } from 'react-native';
 import styles from './styles';
 import { Feather } from '@expo/vector-icons'
 import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
+import { Picker } from '@react-native-community/picker'
+
 
 
 export default function AddAnimal(){
@@ -34,13 +36,15 @@ return(
 
 
 
-
+<Picker>
+  
+</Picker>
 
 
 
 <View style={styles.addAnimalBox}>
-    
-    
+  
+
     
     
     <Text style={styles.titleName}>Nome do animal</Text>
@@ -52,6 +56,36 @@ return(
                     autoCorrect={false}
                     onChangeText={text => onChangeText(text)}
                 />
+  
+   <Text style={styles.titleName}>Idade</Text>
+    <TextInput 
+                    style={styles.input}
+                    
+                    placeholderTextColor='#999'
+                    autoCapitalize="words"
+                    autoCorrect={false}
+                    onChangeText={text => onChangeText(text)}
+                />
+
+<Text style={styles.titleName}>Tipo</Text>
+    <TextInput 
+                    style={styles.input}
+                    
+                    placeholderTextColor='#999'
+                    autoCapitalize="words"
+                    autoCorrect={false}
+                    onChangeText={text => onChangeText(text)}
+                />
+
+<Text style={styles.titleName}>Estado atual</Text>
+    <TextInput 
+                    style={styles.input}
+                    
+                    placeholderTextColor='#999'
+                    autoCapitalize="words"
+                    autoCorrect={false}
+                    onChangeText={text => onChangeText(text)}
+                />               
     
    
     <TouchableOpacity style={styles.buttonAdd} onPress={postAnimal}>

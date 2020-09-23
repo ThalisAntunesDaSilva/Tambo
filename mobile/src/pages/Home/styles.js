@@ -9,13 +9,30 @@ container:{
     margin: 0},
 
 header: {
-    height: 250,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'},
+    height: 170,
+    paddingTop: 20,
+    paddingRight: 20,
+    paddingLeft: 20,
+},
 
-imgHeader :{
-    height: 230},
+profilebox: {
+    display: 'flex',
+    alignItems: 'flex-end',
+    marginBottom: 30,
+},
+
+    textWelcome: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+
+profile: {
+    height: 60,
+    width: 60,
+    borderRadius: 100,
+   
+    
+},
 
    
 options : {
@@ -23,7 +40,9 @@ options : {
         alignItems: 'center',
         justifyContent: 'space-around',
         flexDirection: 'row',
-    marginTop: 30},
+    marginTop: 15,
+marginBottom: 15,
+},
      
 buttonOption: {
     shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -38,7 +57,7 @@ buttonOption: {
     alignItems: 'center',
     flexDirection: 'row',
     height: 150,
-    width: 150,
+    width: 140,
     borderRadius: 10,
     display: 'flex',
     alignItems: 'center',

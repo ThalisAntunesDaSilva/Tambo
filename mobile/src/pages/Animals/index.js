@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { View, FlatList, Image, Text, TouchableOpacity, TextInput } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import cowImage from '../../assets/cowImage.jpg';
-/* import { useNavigation } from '@react-navigation/native';
-import api from '../../services/api' */
+import { useNavigation } from '@react-navigation/native';
+/* import api from '../../services/api' */
 import styles from './styles';
 
 
 export default function Animals() {
     
     /*
-    const [vacas, setVacas] = useState([]);
+    const [vacas, setVacas] = useState([]); */
    const navigation = useNavigation();
-  */
+   
+ 
 
    function navigateToAddAnimal() {
         navigation.navigate('AddAnimal')

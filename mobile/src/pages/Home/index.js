@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity} from 'react-native';
+import { View, Image, Text, TouchableOpacity, ScrollView,StatusBar} from 'react-native';
 import logoImg from '../../assets/logo.png';
 import header from '../../assets/header.jpg';
+import profile from '../../assets/profile.jpg';
 import cowOption from '../../assets/cowOption.png';
 import moneyOption from '../../assets/moneyOption.png';
 import graphicOption from '../../assets/graphicOption.png';
@@ -25,13 +26,28 @@ function navigateToAnimals(){
 
 
     return (
+
 <View style={styles.container}>
-            <View style={styles.header}>
-           <Image source={header} style={styles.imgHeader} />
-                                                        </View>
+<StatusBar
+    barStyle = "dark-content"
    
+    backgroundColor = "#0066CC"
+   
+  
+/>
 
-
+            <View style={styles.header}>
+            
+            
+            <View style={styles.profilebox}>
+            <Image style={styles.profile} source={profile}></Image>
+             </View>
+           
+   
+      <Text style={styles.textWelcome}>Bem-vindo, produtor(a)</Text>
+   
+ </View>
+<ScrollView>
 <View style={styles.options}>
 
 <TouchableOpacity style={styles.buttonOption} onPress={navigateToAnimals}>
@@ -56,11 +72,11 @@ function navigateToAnimals(){
     <Image style={styles.iconOption} source={graphicOption}></Image>
         <Text style={styles.textOption}>Estatísticas</Text>
             </TouchableOpacity>
-
-
+            
+           
 
 </View>
-
+</ScrollView>
 
 
 
