@@ -1,15 +1,14 @@
 import React, {useState } from 'react';
-import { View, Image, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Image, Text, TouchableOpacity, TextInput ,Picker } from 'react-native';
 import styles from './styles';
 import { Feather } from '@expo/vector-icons'
 import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
-import { Picker } from '@react-native-community/picker'
-
 
 
 export default function AddAnimal(){
   const [value, onChangeText] = useState('Useless Placeholder');
+  const [selectedValue, setSelectedValue] = useState("java");
  
   async function postAnimal() {
     api.request({
@@ -21,11 +20,7 @@ export default function AddAnimal(){
          }, }).then(response => {
          
          })
-         
-       
-   }
-
-
+  }
 
 return(
 <View style={styles.container}>
@@ -36,29 +31,18 @@ return(
 
 
 
-<Picker>
-  
-</Picker>
 
 
 
-<View style={styles.addAnimalBox}>
+
+<View >
   
 
-    
-    
-    <Text style={styles.titleName}>Nome do animal</Text>
-    <TextInput 
-                    style={styles.input}
-                    
-                    placeholderTextColor='#999'
-                    autoCapitalize="words"
-                    autoCorrect={false}
-                    onChangeText={text => onChangeText(text)}
-                />
+  <Text style={styles.label}>Nome do animal</Text>
+  <TextInput style={styles.input} placeholderTextColor='#999'autoCorrect={false} onChangeText={text => onChangeText(text)}/>
   
-   <Text style={styles.titleName}>Idade</Text>
-    <TextInput 
+   <Text style={styles.label}>Idade</Text>
+  <TextInput 
                     style={styles.input}
                     
                     placeholderTextColor='#999'
@@ -68,24 +52,22 @@ return(
                 />
 
 <Text style={styles.titleName}>Tipo</Text>
-    <TextInput 
-                    style={styles.input}
-                    
-                    placeholderTextColor='#999'
-                    autoCapitalize="words"
-                    autoCorrect={false}
-                    onChangeText={text => onChangeText(text)}
-                />
+<Picker
+selectedValue={selectedValue}
+        style={styles.pickerAnimal}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}>
+        <Picker.Item label="Java" value="java" />
+        <Picker.Item label="JavaScript" value="js" />
+</Picker>
 
 <Text style={styles.titleName}>Estado atual</Text>
-    <TextInput 
-                    style={styles.input}
-                    
-                    placeholderTextColor='#999'
-                    autoCapitalize="words"
-                    autoCorrect={false}
-                    onChangeText={text => onChangeText(text)}
-                />               
+<Picker
+selectedValue={selectedValue}
+        style={styles.pickerAnimal}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}>
+        <Picker.Item label="Java" value="java" />
+        <Picker.Item label="JavaScript" value="js" />
+</Picker>             
     
    
     <TouchableOpacity style={styles.buttonAdd} onPress={postAnimal}>
