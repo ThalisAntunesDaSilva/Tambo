@@ -2,6 +2,7 @@ package com.api.tambo.Service;
 
 import java.util.List;
 
+import com.api.tambo.Controller.CriaController;
 import com.api.tambo.Entity.Cria;
 import com.api.tambo.Repository.CriaRepository;
 
@@ -24,34 +25,34 @@ import org.springframework.web.bind.annotation.RestController;
 public class CriaResource {
 
     @Autowired
-    CriaRepository criaRepository;
+    CriaController criaController;
 
  
     @GetMapping
     public List<Cria> listaCrias() {
-        return criaRepository.findAll();
+        return criaController.listaCrias();
 
     }
 
     @GetMapping("/cria/{id}")
     public Cria listaCria(@PathVariable(value="id") int id) {
-        return criaRepository.findById(id);
+        return criaController.buscarCria(id);
 
     }
 
     @PostMapping("/cria")
-    public Cria salvaTouro(@RequestBody Cria cria){
-        return criaRepository.save(cria);
+    public Cria salvaCria(@RequestBody Cria cria){
+        return criaController.postaCria(cria);
     }
 
     @DeleteMapping("/cria")
     public void deletaCria(@RequestBody Cria cria){
-        criaRepository.delete(cria);
+        criaController.excluiCria(cria);
     }
 
     @PutMapping("/cria")
     public Cria atualizaCria(@RequestBody Cria cria){
-       return  criaRepository.save(cria);
+       return  criaController.editaCria(cria);
     }
 
 

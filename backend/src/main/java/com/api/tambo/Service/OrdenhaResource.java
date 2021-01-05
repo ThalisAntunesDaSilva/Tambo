@@ -2,8 +2,8 @@ package com.api.tambo.Service;
 
 import java.util.List;
 
-import com.api.tambo.Entity.Producao;
-import com.api.tambo.Repository.ProducaoRepository;
+import com.api.tambo.Controller.OrdenhaController;
+import com.api.tambo.Entity.Ordenha;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,36 +20,36 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping(value = "/producoes")
 
-public class ProducaoResource {
+public class OrdenhaResource {
 
     @Autowired
-    ProducaoRepository producaoRepository;
+    OrdenhaController producaoController;
 
     @GetMapping
-    public List<Producao> listaProducao() {
-        return producaoRepository.findAll();
+    public List<Ordenha> listaProducao() {
+        return producaoController.listaOrdenhas();
 
     }
 
     @GetMapping("/producao/{id}")
-    public Producao listaProducao(@PathVariable(value="id") int id) {
-        return producaoRepository.findById(id);
+    public Ordenha listaProducao(@PathVariable(value="id") int id) {
+        return producaoController.buscarOrdenha(id);
 
     }
 
     @PostMapping("/producao")
-    public Producao salvaProducao(@RequestBody Producao producao){
-        return producaoRepository.save(producao);
+    public Ordenha salvaProducao(@RequestBody Ordenha producao){
+        return producaoController.postaOrdenha(producao);
     }
 
     @DeleteMapping("/producao")
-    public void deletaProducao(@RequestBody Producao producao){
-        producaoRepository.delete(producao);
+    public void deletaProducao(@RequestBody Ordenha producao){
+        producaoController.excluirOrdenha(producao); 
     }
 
     @PutMapping("/producao")
-    public Producao atualizaNascimento(@RequestBody Producao producao){
-       return  producaoRepository.save(producao);
+    public Ordenha atualizaNascimento(@RequestBody Ordenha producao){
+       return  producaoController.editaOrdenha(producao);
     }
 
 

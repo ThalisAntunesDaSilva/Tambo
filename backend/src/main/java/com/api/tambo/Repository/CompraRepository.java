@@ -1,15 +1,14 @@
 package com.api.tambo.Repository;
 
-import com.api.tambo.Entity.Producao;
+import com.api.tambo.Entity.Compra;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * TamboRepository by. Thalis Antunes
  */
-public interface ProducaoRepository extends JpaRepository<Producao, Integer> {
-Producao findById(int id);
-
+public interface CompraRepository extends JpaRepository<Compra, Integer> {
+Compra findById(int id);
 
 
 }

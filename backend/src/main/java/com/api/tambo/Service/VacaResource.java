@@ -2,6 +2,7 @@ package com.api.tambo.Service;
 
 import java.util.List;
 
+import com.api.tambo.Controller.VacaController;
 import com.api.tambo.Entity.Vaca;
 import com.api.tambo.Repository.VacaRepository;
 
@@ -25,35 +26,35 @@ import org.springframework.web.bind.annotation.RestController;
 public class VacaResource {
 
     @Autowired
-    VacaRepository vacaRepository;
+    VacaController vacaController;
   
 
  
     @GetMapping
     public List<Vaca> listaVacas() {
-        return vacaRepository.findAll();
+        return vacaController.listaVacas();
 
     }
 
     @GetMapping("/vaca/{id}")
     public Vaca listaVaca(@PathVariable(value="id") final int id) {
-        return vacaRepository.findById(id);
+        return vacaController.buscarVaca(id);
 
     }
 
     @PostMapping("/vaca")
     public Vaca salvaVaca(@RequestBody final Vaca vaca) {
-        return vacaRepository.save(vaca);
+        return vacaController.postaVaca(vaca);
     }
 
     @DeleteMapping("/vaca")
     public void deletaVaca(@RequestBody final Vaca vaca) {
-        vacaRepository.delete(vaca);
+        vacaController.excluiVaca(vaca);
     }
 
     @PutMapping("/vaca")
     public Vaca atualizaVaca(@RequestBody final Vaca vaca) {
-       return  vacaRepository.save(vaca);
+       return  vacaController.editaVaca(vaca);
     }
 
 
