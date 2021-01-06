@@ -20,12 +20,13 @@ public class OrdenhaController {
 	}
 	
 	
+	
 	public List<Ordenha>listaOrdenhaNoMes(int mes){
 		List<Ordenha> ordenhasdomes = new ArrayList<>();
 		List<Ordenha> todasordenhas = ordenhaRepositorio.findAll();
 		
 		for(Ordenha o : todasordenhas) {
-			if(o.getData().getMonth() == mes) {
+			if(o.getMes() == mes) {
 				ordenhasdomes.add(o);
 			}
 		

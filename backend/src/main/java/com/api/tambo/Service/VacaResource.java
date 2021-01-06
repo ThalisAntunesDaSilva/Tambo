@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.api.tambo.Controller.VacaController;
 import com.api.tambo.Entity.Vaca;
-import com.api.tambo.Repository.VacaRepository;
+
+import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -37,7 +38,7 @@ public class VacaResource {
     }
 
     @GetMapping("/vaca/{id}")
-    public Vaca listaVaca(@PathVariable(value="id") final int id) {
+    public Optional<Vaca> listaVaca(@PathVariable(value="id") final int id) {
         return vacaController.buscarVaca(id);
 
     }

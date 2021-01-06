@@ -11,6 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+
 @Entity   
 @Table(name="Ordenha")
 public class Ordenha implements Serializable {
@@ -23,17 +27,30 @@ private static final long serialVersionUID = 1L;
    @Id
    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-    private float ordenha1;
-    private float ordenha2;
-    private Vaca vaca;
-    private Date data;
-    private int mes;
-    @ManyToOne
-    @JoinColumn(name = "vaca")
-    
-    
-     	
-    	public int getId() {
+   private Date data; 
+   private float ordenha1;
+   private float ordenha2;
+   @JsonBackReference
+   @ManyToOne
+   @JoinColumn(name = "vaca")
+   private Vaca vaca;
+   private int mes;
+   
+   
+   public Ordenha() {
+	}
+   @JsonCreator 
+   public Ordenha(int id,Date data,float ordenha1,float ordenha2,Vaca vaca,int mes) {
+	super();
+	this.id = id;
+	this.data = data;
+	this.ordenha1 = ordenha1;
+	this.ordenha2 = ordenha2;
+	this.vaca = vaca;
+	this.mes = mes;
+}
+
+		public int getId() {
            return id;
             
         }

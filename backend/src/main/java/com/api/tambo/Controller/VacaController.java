@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import com.api.tambo.Entity.Vaca;
 import com.api.tambo.Repository.VacaRepository;
 
+import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
+
 @Controller
 public class VacaController {
 	
@@ -18,8 +20,8 @@ public class VacaController {
 		return vacaRepositorio.findAll();
 	}
 
-	public Vaca buscarVaca(int id){
-		  return vacaRepositorio.findById(id);
+	public Optional<Vaca> buscarVaca(int id){
+		  return (Optional<Vaca>) vacaRepositorio.findById(id);
 	}
 
 

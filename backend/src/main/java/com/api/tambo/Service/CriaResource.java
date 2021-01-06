@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.api.tambo.Controller.CriaController;
 import com.api.tambo.Entity.Cria;
-import com.api.tambo.Repository.CriaRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
