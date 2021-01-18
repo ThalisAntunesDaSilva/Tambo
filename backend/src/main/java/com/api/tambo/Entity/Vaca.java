@@ -10,9 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity   
@@ -29,17 +27,14 @@ public class Vaca implements Serializable {
    @OneToMany(mappedBy = "mae")
    private List<Cria>filhos = new ArrayList<>();
    
-   @JsonManagedReference
+   
    @OneToMany(mappedBy = "vaca")
    private List<Ordenha>ordenha = new ArrayList<>();
    
    
-   
     public Vaca() {
-	
 }
     
-
 	public Vaca(int id, String nome, Date dataNascimento, float producao) {
 		super();
 		this.id = id;

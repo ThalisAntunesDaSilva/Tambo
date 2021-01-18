@@ -2,7 +2,6 @@ package com.api.tambo.Entity;
 
 import java.io.Serializable;
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 
@@ -30,7 +27,7 @@ private static final long serialVersionUID = 1L;
    private Date data; 
    private float ordenha1;
    private float ordenha2;
-   @JsonBackReference
+  
    @ManyToOne
    @JoinColumn(name = "vaca")
    private Vaca vaca;
@@ -39,6 +36,7 @@ private static final long serialVersionUID = 1L;
    
    public Ordenha() {
 	}
+   
    @JsonCreator 
    public Ordenha(int id,Date data,float ordenha1,float ordenha2,Vaca vaca,int mes) {
 	super();

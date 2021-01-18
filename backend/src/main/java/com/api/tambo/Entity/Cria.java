@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity   
 @Table(name="Cria")
@@ -29,6 +31,7 @@ private static final long serialVersionUID = 1L;
     @ManyToOne
     @JoinColumn(name = "idpai")
     private Touro pai;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "idmae")
     private Vaca mae; 

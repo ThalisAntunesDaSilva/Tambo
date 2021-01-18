@@ -20,6 +20,7 @@ public class VacaController {
 		return vacaRepositorio.findAll();
 	}
 
+	@SuppressWarnings("unchecked")
 	public Optional<Vaca> buscarVaca(int id){
 		  return (Optional<Vaca>) vacaRepositorio.findById(id);
 	}
