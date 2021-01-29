@@ -1,5 +1,7 @@
 package com.api.tambo.Controller;
 
+//comunica com banco
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

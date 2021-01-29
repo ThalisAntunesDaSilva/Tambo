@@ -1,5 +1,7 @@
 package com.api.tambo.Service;
 
+//Efetua métodos do controller, faz requests
+
 import java.util.List;
 
 import com.api.tambo.Controller.CriaController;
